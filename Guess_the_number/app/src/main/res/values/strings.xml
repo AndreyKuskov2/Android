@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Guess_the_number</string>
+    <string name="behind">Недолет</string>
+    <string name= "ahead">Перелет</string>
+    <string name="hit">В точку</string>
+    <string name="input_value">Ввести значение</string>
+    <string name="pLay_more">Сыграть еще</string>
+    <string name="try_to_guess">Попробуйте угадать число(1 &#8211; 100)</string>
+    <string name="error">Неверный ввод</string>
+    <string name="range">Число не из диапазона!</string>
+    <string name="exit">Выход</string>
+</resources>
