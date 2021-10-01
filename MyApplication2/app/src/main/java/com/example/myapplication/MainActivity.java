@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ListView mainListView;
     ArrayAdapter mArrayAdapter;
     ArrayList mNameList = new ArrayList();
+    Button ok_btn, cnc_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mNameList);
         mainListView.setAdapter(mArrayAdapter);
         mainListView.setOnItemClickListener(this);
+        ok_btn = findViewById(R.id.ok_btn);
+        cnc_btn = findViewById(R.id.cnc_btn);
+        ok_btn.setOnClickListener(oclBtn);
+        cnc_btn.setOnClickListener(oclBtn);
     }
     @Override
     public void onClick(View v)
@@ -50,5 +56,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainTextView.setText(mNameList.get(position).toString()
                 + " is learning Android development!");
     }
+
+    View.OnClickListener oclBtn = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // по id определеяем кнопку, вызвавшую этот обработчик
+            switch (v.getId()) {
+                case R.id.ok_btn:
+                    // кнопка ОК
+                    mainTextView.setText("Нажата кнопка ОК");
+                    Toast.makeText(getApplicationContext(), "Нажата кнопка ОК", Toast.LENGTH_LONG).show();
+                    break;
+                case R.id.cnc_btn:
+                    // кнопка Cancel
+                    mainTextView.setText("Нажата кнопка Cancel");
+                    Toast.makeText(getApplicationContext(), "Нажата кнопка Cancel", Toast.LENGTH_LONG).show();
+                    break;
+            }
+        }
+    };
 
 }
