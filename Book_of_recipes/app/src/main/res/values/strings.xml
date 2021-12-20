@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Book_of_recipes</string>
+    <string name="description">Опишите ваш рецепт!\n Расскажите интересные факты о нем:\n где был изобретен, когда, кем!</string>
+</resources>
